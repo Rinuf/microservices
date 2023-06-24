@@ -141,7 +141,7 @@ pipeline {
                 parallel (
                     'deploy on k8s': {
                         script {
-                            withKubeCredentials(kubectlCredentials: [[ credentialsId: 'kubernetes', namespace: 'ms' ]]) {
+                            withKubeCredentials(kubectlCredentials: [[ credentialsId: 'k8s', namespace: 'ms' ]]) {
                                 sh 'kubectl get ns' 
                                 sh 'kubectl apply -f kubernetes/yamlfile'
                             }
