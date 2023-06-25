@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('SCM Checkout'){
             steps {
-            git branch: 'main', url: 'https://github.com/Rinuf/microservices.git'
+            git branch: 'main', credentialsId: 'git', url: 'https://github.com/Rinuf/microservices.git'
             sh 'ls'
             }
         }
